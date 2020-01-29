@@ -36,7 +36,7 @@ if [ -z "$SOURCE_DIR" ]; then
 fi
 
 # Login
-az login --service-principal --username ${AZURE_CLIENT_ID} --password ${AZURE_SECRET} --tenant ${AZURE_TENANT_ID}
+az login --service-principal --username ${AZURE_CLIENT_ID} --password ${AZURE_SECRET} --tenant ${AZURE_TENANT_ID} --allow-no-subscriptions
 
 # Set subscription id
 az account set --subscription ${AZURE_SUBSCRIPTION_ID}
