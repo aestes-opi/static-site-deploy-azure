@@ -36,11 +36,10 @@ if [ -z "$SOURCE_DIR" ]; then
 fi
 
 # Login
-az login --service-principal --username ${AZURE_CLIENT_ID} --password ${AZURE_SECRET} --tenant ${AZURE_TENANT_ID} --allow-no-subscriptions
+az login --service-principal --username ${AZURE_CLIENT_ID} --password ${AZURE_SECRET} --tenant ${AZURE_TENANT_ID}
 
 # Set subscription id
-# Commented out due to bypass in above command (--allow-no-subscriptions)
-#az account set --subscription ${AZURE_SUBSCRIPTION_ID}
+az account set --subscription ${AZURE_SUBSCRIPTION_ID}
 
 # Enable Static Website
 if [ -z "$AZURE_ERROR_DOCUMENT_NAME" ]; then
